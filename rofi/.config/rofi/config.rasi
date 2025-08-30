@@ -1,3 +1,5 @@
+@theme "~/.config/theme/current/rofi/rofi.rasi"
+
 configuration {
     modi: "drun,calc,emoji:rofimoji";
 }
