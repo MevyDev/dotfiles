@@ -2,7 +2,7 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 
-set -Ux TERMINAL alacritty
+set -Ux TERMINAL kitty
 
 function mkcd
     mkdir -p $argv[1]; and cd $argv[1]
