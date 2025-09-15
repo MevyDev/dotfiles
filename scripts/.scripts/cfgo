@@ -1,0 +1,26 @@
+#!/bin/bash
+
+if [ $# -lt 1 ]; then
+    echo "Usage: $0 <cpp_file> [input_file] [output_file]"
+    exit 1
+fi
+
+cpp_file="$1.cpp"
+exe_file="$cpp_file.exe"
+
+g++ -O2 -Wall -Wextra -Wshadow -Wno-sign-compare -fdiagnostics-color=always "-o "$exe_file" "$cpp_file"
+if [ $? -ne 0 ]; then
+    echo "Compilation failed!"
+    exit 1
+fi
+
+if [ $# -eq 1 ]; then
+    "./$exe_file"
+elif [ $# -eq 2 ]; then
+    "./$exe_file" < "$2"
+elif [ $# -eq 3 ]; then
+    "./$exe_file" < "$2" > tmpout
+    diff --color=always -u "$3" tmpout
+    rm tmpout
+fi
+rm "./$exe_file"
