@@ -8,7 +8,7 @@ fi
 cpp_file="$1.cpp"
 exe_file="$cpp_file.exe"
 
-g++ -O2 -Wall -Wextra -Wshadow -Wno-sign-compare -fdiagnostics-color=always "-o "$exe_file" "$cpp_file"
+g++ -O2 -Wall -Wextra -Wshadow -Wno-sign-compare -fdiagnostics-color=always -o "$exe_file" "$cpp_file"
 if [ $? -ne 0 ]; then
     echo "Compilation failed!"
     exit 1
