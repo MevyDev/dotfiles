@@ -21,6 +21,9 @@ elif [ $# -eq 2 ]; then
 elif [ $# -eq 3 ]; then
     "./$exe_file" < "$2" > tmpout
     diff -w --color=always -u "$3" tmpout
+    if [ $? -eq 0 ]; then
+        echo -e "\e[32mPASSED\e[0m"
+    fi
     rm tmpout
 fi
 rm "./$exe_file"
