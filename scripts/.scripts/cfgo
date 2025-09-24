@@ -20,7 +20,7 @@ elif [ $# -eq 2 ]; then
     "./$exe_file" < "$2"
 elif [ $# -eq 3 ]; then
     "./$exe_file" < "$2" > tmpout
-    diff --color=always -u "$3" tmpout
+    diff -w --color=always -u "$3" tmpout
     rm tmpout
 fi
 rm "./$exe_file"
