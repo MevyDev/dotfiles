@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ $# -lt 1 ]; then
+if [ $# -lt 1 ] || [ $# -gt 3 ]; then
     echo "Usage: $0 <cpp_file> [input_file] [output_file]"
     exit 1
 fi
