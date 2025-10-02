@@ -1,12 +1,14 @@
 #!/bin/bash
 
+trap 'rm -f "$exe_file" "$temp_output"' EXIT
+
 if [ $# -lt 1 ] || [ $# -gt 3 ]; then
     echo "Usage: $0 <cpp_file> [input_file] [output_file]"
     exit 1
 fi
 
-cpp_file="$1.cpp"
-exe_file="$cpp_file.exe"
+cpp_file="./$1.cpp"
+exe_file="/tmp/$cpp_file.exe"
 
 g++ -O2 -Wall -Wextra -Wshadow -Wno-sign-compare -fdiagnostics-color=always -o "$exe_file" "$cpp_file"
 if [ $? -ne 0 ]; then
@@ -14,16 +16,16 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
+temp_output="/tmp/cfgotempout"
+
 if [ $# -eq 1 ]; then
-    "./$exe_file"
+    "$exe_file"
 elif [ $# -eq 2 ]; then
-    "./$exe_file" < "$2"
+    "$exe_file" < "./$2"
 elif [ $# -eq 3 ]; then
-    "./$exe_file" < "$2" > tmpout
-    diff -w --color=always -u "$3" tmpout
+    "$exe_file" < "./$2" > "$temp_output"
+    diff -w --color=always -u "./$3" "$temp_output"
     if [ $? -eq 0 ]; then
         echo -e "\e[32mPASSED\e[0m"
     fi
-    rm tmpout
 fi
-rm "./$exe_file"
