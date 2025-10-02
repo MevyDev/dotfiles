@@ -5,13 +5,13 @@ if [ $# -ne 3 ]; then
     exit 1
 fi
 
-cpp_a="./$1.cpp"
-cpp_b="./$2.cpp"
-cpp_gen="./$3.cpp"
+cpp_a="./${1%.cpp}.cpp"
+cpp_b="./${2%.cpp}.cpp"
+cpp_gen="./${3%.cpp}.cpp"
 
-exe_a="/tmp/$1.exe"
-exe_b="/tmp/$2.exe"
-exe_gen="/tmp/$3.exe"
+exe_a="/tmp/${1%.cpp}.exe"
+exe_b="/tmp/${2%.cpp}.exe"
+exe_gen="/tmp/${3%.cpp}.exe"
 
 input="/tmp/tmpin"
 out_a="/tmp/tmpouta"

@@ -7,8 +7,8 @@ if [ $# -lt 1 ] || [ $# -gt 3 ]; then
     exit 1
 fi
 
-cpp_file="./$1.cpp"
-exe_file="/tmp/$cpp_file.exe"
+cpp_file="./${1%.cpp}.cpp"
+exe_file="/tmp/${1%.cpp}.exe"
 
 g++ -std=c++17 -O2 -Wall -Wextra -Wshadow -Wno-sign-compare -fdiagnostics-color=always -o "$exe_file" "$cpp_file"
 if [ $? -ne 0 ]; then
