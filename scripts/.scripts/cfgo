@@ -10,7 +10,7 @@ fi
 cpp_file="./$1.cpp"
 exe_file="/tmp/$cpp_file.exe"
 
-g++ -O2 -Wall -Wextra -Wshadow -Wno-sign-compare -fdiagnostics-color=always -o "$exe_file" "$cpp_file"
+g++ -std=c++17 -O2 -Wall -Wextra -Wshadow -Wno-sign-compare -fdiagnostics-color=always -o "$exe_file" "$cpp_file"
 if [ $? -ne 0 ]; then
     echo -e "\e[31mCompilation failed!\e[0m"
     exit 1
