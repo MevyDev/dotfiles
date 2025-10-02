@@ -21,17 +21,17 @@ diff_input="./diffin"
 
 trap 'rm "$input" "$out_a" "$out_b" "$exe_a" "$exe_b" "$exe_gen"' EXIT
 
-g++ -O2 -Wall -Wextra -Wshadow -Wno-sign-compare -fdiagnostics-color=always -o "$exe_a" "$cpp_a"
+g++ -std=c++17 -O2 -Wall -Wextra -Wshadow -Wno-sign-compare -fdiagnostics-color=always -o "$exe_a" "$cpp_a"
 if [ $? -ne 0 ]; then
     echo -e "\e[31mA file compilation failed!\e[0m"
     exit 1
 fi
-g++ -O2 -Wall -Wextra -Wshadow -Wno-sign-compare -fdiagnostics-color=always -o "$exe_b" "$cpp_b"
+g++ -std=c++17 -O2 -Wall -Wextra -Wshadow -Wno-sign-compare -fdiagnostics-color=always -o "$exe_b" "$cpp_b"
 if [ $? -ne 0 ]; then
     echo -e "\e[31mB file compilation failed!\e[0m"
     exit 1
 fi
-g++ -O2 -Wall -Wextra -Wshadow -Wno-sign-compare -fdiagnostics-color=always -o "$exe_gen" "$cpp_gen"
+g++ -std=c++17 -O2 -Wall -Wextra -Wshadow -Wno-sign-compare -fdiagnostics-color=always -o "$exe_gen" "$cpp_gen"
 if [ $? -ne 0 ]; then
     echo -e "\e[31mGenerator compilation failed!\e[0m"
     exit 1
