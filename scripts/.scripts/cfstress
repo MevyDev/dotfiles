@@ -5,21 +5,21 @@ if [ $# -ne 3 ]; then
     exit 1
 fi
 
-cpp_a="$1.cpp"
-cpp_b="$2.cpp"
-cpp_gen="$3.cpp"
+cpp_a="./$1.cpp"
+cpp_b="./$2.cpp"
+cpp_gen="./$3.cpp"
 
-exe_a="$1.exe"
-exe_b="$2.exe"
-exe_gen="$3.exe"
+exe_a="/tmp/$1.exe"
+exe_b="/tmp/$2.exe"
+exe_gen="/tmp/$3.exe"
 
-input="tmpin"
-out_a="tmpouta"
-out_b="tmpoutb"
+input="/tmp/tmpin"
+out_a="/tmp/tmpouta"
+out_b="/tmp/tmpoutb"
 
-diff_input="diffin"
+diff_input="./diffin"
 
-trap "rm ./$input ./$out_a ./$out_b ./$exe_a ./$exe_b ./$exe_gen" EXIT
+trap 'rm "$input" "$out_a" "$out_b" "$exe_a" "$exe_b" "$exe_gen"' EXIT
 
 g++ -O2 -Wall -Wextra -Wshadow -Wno-sign-compare -fdiagnostics-color=always -o "$exe_a" "$cpp_a"
 if [ $? -ne 0 ]; then
@@ -41,13 +41,13 @@ idx=1
 next_info=1
 
 while true; do
-    "./$exe_gen" > "$input"
-    "./$exe_a" < "$input" > "$out_a"
-    "./$exe_b" < "$input" > "$out_b"
+    "$exe_gen" > "$input"
+    "$exe_a" < "$input" > "$out_a"
+    "$exe_b" < "$input" > "$out_b"
     diff -w --color=always -u "$out_a" "$out_b"
     if [ $? -ne 0 ]; then
-        cp "./$input" "./$diff_input"
-        cat "./$diff_input"
+        cp "$input" "$diff_input"
+        cat "$diff_input"
         echo -e "\e[31mTEST $idx FAILED\e[0m"
         exit 0
     else
