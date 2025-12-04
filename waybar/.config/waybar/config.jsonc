@@ -11,19 +11,27 @@
     "clock"
   ],
   "modules-right": [
+    "tray",
     "bluetooth",
     "network",
     "backlight",
     "battery",
     "pulseaudio"
   ],
+  "tray": {
+    "icon-size": 15,
+    "spacing": 10,
+    "show-passive-items": true,
+    "reverse-direction": false,
+    "smooth-scrolling-threshold": 1.0
+  },
   "hyprland/workspaces": {
     "disable-scroll": true,
     "all-outputs": true,
     "format": "{name}: {icon}",
     "format-icons": {
-      "active": "",
-      "default": ""
+      "active": "",
+      "default": ""
     }
   },
   "bluetooth": {
