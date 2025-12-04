@@ -4,9 +4,9 @@
   "margin-bottom": -10,
   "spacing": 0,
   "modules-left": [
-    "sway/workspaces",
-    "cpu",
-    "memory"
+    "hyprland/workspaces",
+    "memory",
+    "cpu"
   ],
   "modules-center": [
     "clock"
@@ -14,11 +14,11 @@
   "modules-right": [
     "bluetooth",
     "network",
-    "pulseaudio",
     "backlight",
-    "battery"
+    "battery",
+    "pulseaudio"
   ],
-  "sway/workspaces": {
+  "hyprland/workspaces": {
     "disable-scroll": true,
     "all-outputs": true,
     "format": "{name}: {icon}",
@@ -43,19 +43,20 @@
   "clock": {
     "tooltip": false,
     "format": "{:%H:%M:%S  -  %A, %d}",
-    "interval": 1
+    "interval": 1,
+    "on-click": "$TERMINAL --hold cal -3"
   },
   "network": {
     "format-wifi": "󰤢",
-    "format-ethernet": "󰈀 ",
-    "format-disconnected": "󰤠 ",
+    "format-ethernet": "󰈀",
+    "format-disconnected": "󰤠",
     "interval": 1,
     "tooltip-format": "{essid} ({signalStrength}%)",
     "on-click": "nm-connection-editor"
   },
   "cpu": {
     "interval": 1,
-    "format": "  {icon0}{icon1}{icon2}{icon3} {usage:>2}%",
+    "format": "  {icon0}{icon1}{icon2}{icon3}{usage:>2}%",
     "format-icons": [
       "▁",
       "▂",
@@ -71,12 +72,12 @@
   "memory": {
     "interval": 1,
     "format": "  {used:0.1f}G/{total:0.1f}G",
-    "tooltip-format": "Memory"
+    "on-click": "$TERMINAL -e htop"
   },
   "backlight": {
-    "format": "{icon}  {percent}%",
+    "format": "{icon} {percent}%",
     "format-icons": [
-      "",
+      " ",
       "󰃜",
       "󰃛",
       "󰃞",
@@ -87,8 +88,8 @@
     "tooltip": false
   },
   "pulseaudio": {
-    "format": "{icon}  {volume}%",
-    "format-muted": "",
+    "format": "{icon} {volume}%",
+    "format-muted": " ",
     "format-icons": {
       "default": [
         "",
@@ -104,8 +105,8 @@
       "warning": 30,
       "critical": 15
     },
-    "format": "{icon}  {capacity}%",
-    "format-full": "{icon}  {capacity}%",
+    "format": "{icon} {capacity}%",
+    "format-full": "{icon} {capacity}%",
     "format-charging": " {capacity}%",
     "format-plugged": " {capacity}%",
     "format-alt": "{icon} {time}",
@@ -116,5 +117,5 @@
       "",
       ""
     ]
-  },
+  }
 }
