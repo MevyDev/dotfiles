@@ -22,7 +22,7 @@
 #cpu {
   background-color: #1e1e2e;
   padding: 0.3rem 0.7rem;
-  margin: 5px 0px;
+  margin: 10px 0px;
   border-radius: 6px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   min-width: 0;
@@ -71,7 +71,7 @@
 #clock {
   background-color: #1e1e2e;
   padding: 0.3rem 0.7rem;
-  margin: 5px 0px;
+  margin: 10px 0px;
   border-radius: 6px;
   min-width: 0;
   border: none;
@@ -90,7 +90,7 @@
 #battery {
   background-color: #1e1e2e;
   padding: 0.3rem 0.7rem;
-  margin: 5px 0px; 
+  margin: 10px 0px; 
   border-radius: 0;
   min-width: 0;
   border: none;

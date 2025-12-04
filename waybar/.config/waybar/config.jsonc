@@ -1,7 +1,7 @@
 {
   "layer": "top",
   "position": "top",
-  "margin-bottom": -15,
+  "margin-bottom": -20,
   "spacing": 0,
   "modules-left": [
     "memory",
