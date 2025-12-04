@@ -145,12 +145,12 @@
 
 /* --- Tooltip Styles --- */
 tooltip {
-  background-color: #1a1b26;
-  color: #dddddd;
-  padding: 5px 12px;
+  background-color: #1e1e2e;
+  color: #cdd6f4;
+  padding: 5px 13px;
   margin: 5px 0px;
   border-radius: 6px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  font-size: 12px;
+  border: 2px solid rgba(180, 190, 254, 0.3);
+  box-shadow: 0 4px 13px rgba(0, 0, 0, 0.2);
+  font-size: 13px;
 }
