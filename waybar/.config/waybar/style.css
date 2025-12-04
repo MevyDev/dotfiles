@@ -30,12 +30,15 @@
   transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 
-#memory {
+#cpu {
   margin-right: 5px;
 }
 
 #workspaces {
   padding: 2px;
+}
+
+#memory {
   margin-left: 20px; /* Same as outer gap in Hyprland config */
   margin-right: 5px;
 }

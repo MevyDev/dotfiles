@@ -4,9 +4,9 @@
   "margin-bottom": -10,
   "spacing": 0,
   "modules-left": [
-    "hyprland/workspaces",
     "memory",
-    "cpu"
+    "cpu",
+    "hyprland/workspaces"
   ],
   "modules-center": [
     "clock"
