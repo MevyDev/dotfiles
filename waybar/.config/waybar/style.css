@@ -1,0 +1,156 @@
+/* based on https://github.com/Prateek7071/dotfiles */
+
+* {
+  font-family: 'CaskaydiaCove Nerd Font', sans-serif;
+  font-size: 13px;
+  min-height: 0;
+  padding-right: 0px;
+  padding-left: 0px;
+  padding-bottom: 0px;
+}
+
+#waybar {
+  background: transparent;
+  color: #cdd6f4;
+  margin: 0px;
+  font-weight: 500;
+}
+
+/* --- Left Modules (Individual) --- */
+#workspaces,
+#memory,
+#cpu {
+  background-color: #1e1e2e;
+  padding: 0.3rem 0.7rem;
+  margin: 5px 0px;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  min-width: 0;
+  border: none;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+#memory {
+  margin-right: 5px;
+}
+
+#workspaces {
+  padding: 2px;
+  margin-left: 20px; /* Same as outer gap in Hyprland config */
+  margin-right: 5px;
+}
+
+#memory:hover,
+#cpu:hover {
+  background-color: rgb(49, 50, 68);
+}
+
+#workspaces button {
+  color: #cdd6f4;
+  border-radius: 5px;
+  padding: 0.3rem 0.7rem;
+  background: transparent;
+  transition: all 0.2s ease-in-out;
+  border: none;
+  outline: none;
+}
+
+#workspaces button.active {
+  color: #b4befe;
+  background-color: rgba(180, 190, 254, 0.1);
+  box-shadow: inset 0 0 0 1px rgba(180, 190, 254, 0.2);
+}
+
+#workspaces button:hover {
+  background: rgb(49, 50, 68);
+}
+
+#clock {
+  background-color: #1e1e2e;
+  padding: 0.3rem 0.7rem;
+  margin: 5px 0px;
+  border-radius: 6px;
+  min-width: 0;
+  border: none;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+#clock:hover {
+  background-color: rgb(49, 50, 68);
+}
+
+/* --- Right Modules (Seamless Bar ) --- */
+#bluetooth,
+#pulseaudio,
+#backlight,
+#network,
+#battery {
+  background-color: #1e1e2e;
+  padding: 0.3rem 0.7rem;
+  margin: 5px 0px; 
+  border-radius: 0;
+  min-width: 0;
+  border: none;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+#bluetooth:hover,
+#pulseaudio:hover,
+#backlight:hover,
+#network:hover,
+#custom-lock:hover,
+#battery:hover {
+  background-color: rgb(49, 50, 68);
+}
+
+#bluetooth {
+  margin-left: 0px; 
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+
+#pulseaudio {
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  margin-right: 20px;
+}
+
+#network {
+  color: #cdd6f4;
+}
+#network.disconnected {
+  color: #f38ba8;
+}
+
+#bluetooth {
+  color: #cdd6f4;
+  font-size: 16px;
+}
+#bluetooth.on {
+  color: #cdd6f4;
+}
+#bluetooth.connected {
+  color: #89b4fa;
+}
+
+#battery {
+  color: #cdd6f4;
+}
+#battery.charging {
+  color: #cdd6f4;
+}
+#battery.warning:not(.charging) {
+  color: #f38ba8;
+}
+
+/* --- Tooltip Styles --- */
+tooltip {
+  background-color: #1a1b26;
+  color: #dddddd;
+  padding: 5px 12px;
+  margin: 5px 0px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  font-size: 12px;
+}
