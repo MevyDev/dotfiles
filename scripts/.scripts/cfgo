@@ -19,11 +19,11 @@ fi
 temp_output="/tmp/cfgotempout"
 
 if [ $# -eq 1 ]; then
-    command time -f "\n\n%es" "$exe_file"
+    "$exe_file"
 elif [ $# -eq 2 ]; then
-    command time -f "\n\n%es" "$exe_file" < "./$2"
+    "$exe_file" < "./$2"
 elif [ $# -eq 3 ]; then
-    command time -f "\n\n%es" "$exe_file" < "./$2" > "$temp_output"
+    "$exe_file" < "./$2" > "$temp_output"
     diff -w --color=always -u "./$3" "$temp_output"
     if [ $? -eq 0 ]; then
         echo -e "\e[32mPASSED\e[0m"
