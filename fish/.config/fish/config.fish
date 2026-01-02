@@ -10,6 +10,9 @@ function mkcd
 end
 
 alias vim nvim
+alias cat bat
+alias ls lsd
+alias tree "lsd --tree"
 
 function y
 	set tmp (mktemp -t "yazi-cwd.XXXXXX")
