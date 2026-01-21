@@ -10,7 +10,12 @@ fi
 cpp_file="./${1%.cpp}.cpp"
 exe_file="/tmp/${1%.cpp}.exe"
 
-g++ -std=c++17 -O2 -Wall -Wextra -Wshadow -Wno-sign-compare -fdiagnostics-color=always -o "$exe_file" "$cpp_file"
+clang++ -std=gnu++17 -fuse-ld=lld \
+    -O2 -pipe -Wall -Wpedantic -Wconversion \
+    -Wno-sign-conversion -Wextra -Wshadow \
+    -Wno-sign-compare -fdiagnostics-color=always \
+    -include ~/.scripts/cpimports.hpp -o "$exe_file" "$cpp_file"
+
 if [ $? -ne 0 ]; then
     echo -e "\e[31mCompilation failed!\e[0m"
     exit 1
