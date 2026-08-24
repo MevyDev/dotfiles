@@ -10,6 +10,7 @@ sddm
 ghostty
 
 git
+stow
 base-devel
 gcc
 clang
