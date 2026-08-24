@@ -2,7 +2,6 @@ wl-clipboard
 neovim
 tmux
 fish
-starship
 qcopy
 waybar
 copyq

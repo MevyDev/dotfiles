@@ -31,8 +31,6 @@ function y
     rm -f -- "$tmp"
 end
 
-starship init fish | source
-
 # ZVM
 set -gx ZVM_INSTALL "$HOME/.zvm/self"
 set -gx PATH $PATH "$HOME/.zvm/bin"
