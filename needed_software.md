@@ -3,12 +3,12 @@ neovim
 tmux
 fish
 starship
-kitty
 qcopy
 waybar
 copyq
 lsd
 sddm
+ghostty
 
 git
 base-devel
